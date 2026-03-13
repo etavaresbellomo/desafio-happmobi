@@ -1,1 +1,33 @@
-<p>inicio works!</p>
+<div>
+  <!-- espaco para img e nome do usuario -->
+</div>
+<div>
+  <input type="search" placeholder="buscar carro" />
+  <button class="btn btn-primary">Filtrar</button>
+  <div>
+    <span><b>Últimas Reservas</b></span>
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex">
+          <div *ngFor="let item of listaDeCarros()">
+            <div class="d-block">
+              <img [src]="item.img" alt="carro" />
+              <span
+                ><b>{{ item.name }} - {{ item.year }}</b></span
+              >
+              <span>{{ item.type }}</span>
+              <span>Motor {{ item.engine }}</span>
+              <span>{{ item.size }} Lugares</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary">Acessar por QR code</button>
+  </div>
+</div>
+<div>
+  <!-- espaço para o menu no rodapé -->
+</div>

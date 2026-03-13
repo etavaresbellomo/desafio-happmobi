@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginVm } from '../../../api/model/conta/login-vm';
 import { ImportacaoCompartilhada } from '../../../shared/importacao-compartilhada';
-import { AuthService } from '../../../api/module/erp/services/auth.service';
+import { AuthService } from '../../../api/module/erp/services/autenticacao/auth.service';
 import { Router } from '@angular/router';
 
 @Component({

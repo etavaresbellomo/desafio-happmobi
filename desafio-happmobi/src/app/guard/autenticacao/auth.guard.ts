@@ -1,5 +1,5 @@
 import {  CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../../api/module/erp/services/auth.service';
+import { AuthService } from '../../api/module/erp/services/autenticacao/auth.service';
 import { inject } from '@angular/core';
 
 
