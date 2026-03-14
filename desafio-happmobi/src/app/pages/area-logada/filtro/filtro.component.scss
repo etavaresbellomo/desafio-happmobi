@@ -1,5 +1,49 @@
 @use '../../../../assets/scss/base/variables';
 
-header{
+header {
   background-color: variables.$primary-color;
+}
+
+.filtro-buscar-icone {
+  color: variables.$secondary-color;
+  font-size: 20px;
+  margin-right: 0.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.btn-header {
+  padding: 10px;
+  border-bottom: 1px solid variables.$light-color;
+  background: variables.$light-color;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+.filter-option {
+  display: inline-block;
+}
+
+.filter-checkbox {
+  display: none;
+}
+
+.filter-label {
+  display: block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: variables.$light-color;
+  color: variables.$primary-color;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.filter-checkbox:checked+.filter-label {
+  background: variables.$secondary-color;
+  color: variables.$light-color;
 }

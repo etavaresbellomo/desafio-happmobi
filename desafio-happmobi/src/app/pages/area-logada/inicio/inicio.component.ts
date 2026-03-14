@@ -33,7 +33,7 @@ export class InicioComponent {
     this.showFilter = true;
   }
 
-  showFilteredList(list:FiltroCarroVm){
-    console.log(list)
+  showFilteredList(list: FiltroCarroVm) {
+    console.log(list);
   }
 }

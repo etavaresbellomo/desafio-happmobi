@@ -1,79 +1,177 @@
-<section>
+<section class="filtro-section">
   <div class="container-fluid layout-page">
     <header class="no-container">
-      <div style="height: 15vh">
-
-        <i class="fa fa-search"></i> BUSCAR
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="height: 20vh"
+      >
+        <i class="fa fa-search filtro-buscar-icone"></i>
+        <span class="text title">BUSCA</span>
+      </div>
+      <!-- botoes de ação -->
+      <div class="d-flex justify-content-around btn-header">
+        <button (click)="onFilterCancel()" class="btn">Cancelar</button>
+        <button class="btn">Filtros</button>
+        <button (click)="cleanFilters()" class="btn">Limpar</button>
       </div>
     </header>
-    <div>
-      <!-- botoes de ação -->
-      <div class="d-flex">
-        <button (click)="onCancelarFiltro()" class="btn btn-primary">
-          Cancelar
-        </button>
-        <button class="btn btn-primary">Filtros</button>
-        <button (click)="limparFiltros()" class="btn btn-primary">
-          Limpar
-        </button>
-      </div>
+
+    <main>
       <!-- Tipo Carroceria -->
-      @for (tipoCarroceria of listaTipoCarroceria; track $index) {
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            (change)="
-              tipoFiltroSelecionado('tipoCarroceria', tipoCarroceria, $event)
-            "
-            [value]="tipoCarroceria"
-            type="checkbox"
-            [id]="'tipoCarroceria' + tipoCarroceria"
-          />
-          <label class="form-check-label mr-1 d-flex align-items-center">
-            {{ tipoCarroceria }}
-          </label>
+      <div
+        class="accordion accordion-custom no-container"
+        id="filterTypeOfBodywork"
+      >
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed text-title"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTypeOfBodywork"
+            >
+              Tipos de carrocerias
+            </button>
+          </h2>
+          <div
+            id="collapseTypeOfBodywork"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#filterTypeOfBodywork"
+          >
+            <div class="accordion-body">
+              <div class="row justify-content-center">
+                @for (typeOfBodywork of listTypeOfBodywork; track $index) {
+                  <div class="col-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        (change)="
+                          onSelectedFilter(
+                            'typeOfBodywork',
+                            typeOfBodywork,
+                            $event
+                          )
+                        "
+                        [value]="typeOfBodywork"
+                        type="checkbox"
+                        [id]="'typeOfBodywork' + typeOfBodywork"
+                      />
+                      <label
+                        class="form-check-label mr-1 d-flex align-items-center"
+                      >
+                        {{ typeOfBodywork }}
+                      </label>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
         </div>
-      }
+      </div>
       <!-- Tipo Motor -->
-      @for (tipoMotor of listaTipoMotor; track $index) {
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            (change)="tipoFiltroSelecionado('tipoMotor', tipoMotor, $event)"
-            [value]="tipoMotor"
-            type="checkbox"
-            [id]="'tipoCarroceria' + tipoMotor"
-          />
-          <label class="form-check-label mr-1 d-flex align-items-center">
-            Motor {{ tipoMotor }}
-          </label>
+      <div
+        class="accordion accordion-custom no-container mt-5"
+        id="filterEngine"
+      >
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed text-title"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEngine"
+            >
+              Tipos de motores
+            </button>
+          </h2>
+          <div
+            id="collapseEngine"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#filterEngine"
+          >
+            <div class="accordion-body">
+              <div class="mt-2 d-flex flex-wrap gap-2">
+                @for (typeEngine of listTypeEngine; track $index) {
+                  <div class="filter-option">
+                    <input
+                      class="filter-checkbox"
+                      type="checkbox"
+                      (change)="
+                        onSelectedFilter('typeEngine', typeEngine, $event)
+                      "
+                      [value]="typeEngine"
+                      [id]="'engine' + typeEngine"
+                    />
+                    <label class="filter-label" [for]="'engine' + typeEngine">
+                      Motor {{ typeEngine }}
+                    </label>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
         </div>
-      }
+      </div>
       <!-- Quantidade de Lugares -->
-      @for (quantidadeLugares of listaQuantidadeLugares; track $index) {
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            (change)="
-              tipoFiltroSelecionado(
-                'quantidadeLugares',
-                quantidadeLugares,
-                $event
-              )
-            "
-            [value]="quantidadeLugares"
-            type="checkbox"
-            [id]="'tipoCarroceria' + quantidadeLugares"
-          />
-          <label class="form-check-label mr-1 d-flex align-items-center">
-            0 {{ quantidadeLugares }}
-          </label>
+      <div
+        class="accordion accordion-custom no-container mt-5"
+        id="filterNumberOfSeats"
+      >
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed text-title"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNumberOfSeats"
+            >
+              Quatidade de lugares
+            </button>
+          </h2>
+          <div
+            id="collapseNumberOfSeats"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#filterNumberOfSeats"
+          >
+            <div class="accordion-body">
+              <div class="mt-2 d-flex flex-wrap gap-2">
+                @for (numberOfSeats of listNumberOfSeats; track $index) {
+                  <div class="filter-option">
+                    <input
+                      class="filter-checkbox"
+                      (change)="
+                        onSelectedFilter('numberOfSeats', numberOfSeats, $event)
+                      "
+                      [value]="numberOfSeats"
+                      type="checkbox"
+                      [id]="'numberOfSeats' + numberOfSeats"
+                    />
+                    <label
+                      class="filter-label"
+                      [for]="'numberOfSeats' + numberOfSeats"
+                    >
+                      0 {{ numberOfSeats }}
+                    </label>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
         </div>
-      }
-    </div>
+      </div>
+    </main>
     <div>
-      <!--  btn aplicar filtro -->
-      <button class="btn btn-primary" (click)="filtra()">Filtrar</button>
+      <footer class="mt-5 footer-g no-container">
+        <div class="btn-footer">
+          <button
+            class="btn btn-primary btn-round btn-spacing w-100"
+            (click)="toFilter()"
+          >
+            APLICAR FILTRO
+          </button>
+        </div>
+      </footer>
     </div>
   </div>
 </section>

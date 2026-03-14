@@ -42,5 +42,51 @@
 .footer-g{
   border-top: 1px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
+.accordion-custom {
+
+  .accordion-button {
+    background: #e9e9e9;
+    font-weight: 600;
+    color: variables.$black-text-color;
+    box-shadow: none;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background: #e9e9e9;
+    color: variables.$black-text-color;
+  }
+
+  .accordion-body {
+    background: #f7f7f7;
+  }
+
+  .form-check {
+    margin-bottom: 10px;
+  }
+
+  .form-check-input {
+    border: 2px solid variables.$black-text-color;
+    width: 18px;
+    height: 18px;
+  }
+
+  .form-check-input:checked {
+    background-color: variables.$secondary-color;
+    border-color: variables.$secondary-color;
+  }
+
+  .form-check-label {
+    margin-left: 8px;
+    font-size: 15px;
+  }
+
+  .text-title {
+    font-size: variables.$font-size-title !important;
+  }
+
+  .accordion-item {
+    border: none !important;
+  }
 }

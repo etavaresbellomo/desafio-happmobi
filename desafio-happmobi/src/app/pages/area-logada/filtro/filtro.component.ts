@@ -17,60 +17,58 @@ import { FiltroCarroVm } from '../../../api/interface/area-logada/filtro-carro-v
   styleUrl: './filtro.component.scss',
 })
 export class FiltroComponent implements OnChanges {
-  @Input() listaProdutos = new Array<CarrosVm>();
-  @Output() cancelarFiltro = new EventEmitter<any>();
-  @Output() listasFiltrosSelecionados = new EventEmitter<any>();
+  @Input() listCars = new Array<CarrosVm>();
+  @Output() filterCancel = new EventEmitter<any>();
+  @Output() listSelectedFilter = new EventEmitter<any>();
 
-
-  listaTipoCarroceria = new Array<any>();
-  listaTipoMotor = new Array<any>();
-  listaQuantidadeLugares = new Array<any>();
-  filtroSelecionado: FiltroCarroVm = {
-    tipoCarroceria: [],
-    tipoMotor: [],
-    quantidadeLugares: [],
+  listTypeOfBodywork = new Array<any>();
+  listTypeEngine = new Array<any>();
+  listNumberOfSeats = new Array<any>();
+  selectedFilter: FiltroCarroVm = {
+    typeOfBodywork: [],
+    typeEngine: [],
+    numberOfSeats: [],
   };
 
   ngOnChanges(): void {
-    this.separarParametrosFiltros();
+    this.separateFilterParameters();
   }
 
-  separarParametrosFiltros() {
-    if (this.listaProdutos) {
-      this.listaProdutos.forEach((item: any) => {
-        if (!this.listaTipoCarroceria.includes(item.type)) {
-          this.listaTipoCarroceria.push(item.type);
+  separateFilterParameters() {
+    if (this.listCars) {
+      this.listCars.forEach((item: any) => {
+        if (!this.listTypeOfBodywork.includes(item.type)) {
+          this.listTypeOfBodywork.push(item.type);
         }
 
-        if (!this.listaTipoMotor.includes(item.engine)) {
-          this.listaTipoMotor.push(item.engine);
+        if (!this.listTypeEngine.includes(item.engine)) {
+          this.listTypeEngine.push(item.engine);
         }
 
-        if (!this.listaQuantidadeLugares.includes(item.size)) {
-          this.listaQuantidadeLugares.push(item.size);
+        if (!this.listNumberOfSeats.includes(item.size)) {
+          this.listNumberOfSeats.push(item.size);
         }
       });
     }
   }
 
-  tipoFiltroSelecionado(tipo: keyof FiltroCarroVm, valor: number, event: any) {
-    const checado = event.target.checked;
+  onSelectedFilter(tipo: keyof FiltroCarroVm, value: number, event: any) {
+    const checked = event.target.checked;
 
-    if (checado) {
-      this.filtroSelecionado[tipo].push(valor);
+    if (checked) {
+      this.selectedFilter[tipo].push(value);
     } else {
-      this.filtroSelecionado[tipo] = this.filtroSelecionado[tipo].filter(
-        (item) => item !== valor,
+      this.selectedFilter[tipo] = this.selectedFilter[tipo].filter(
+        (item) => item !== value,
       );
     }
-    console.log(this.filtroSelecionado);
   }
 
-  limparFiltros() {
-    this.filtroSelecionado = {
-      tipoCarroceria: [],
-      tipoMotor: [],
-      quantidadeLugares: [],
+  cleanFilters() {
+    this.selectedFilter = {
+      typeOfBodywork: [],
+      typeEngine: [],
+      numberOfSeats: [],
     };
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -79,13 +77,13 @@ export class FiltroComponent implements OnChanges {
     });
   }
 
-  onCancelarFiltro() {
-    this.limparFiltros();
-    this.cancelarFiltro.emit();
+  onFilterCancel() {
+    this.cleanFilters();
+    this.filterCancel.emit();
   }
 
-  filtra() {
-    this.listasFiltrosSelecionados.emit(this.filtroSelecionado)
-    this.onCancelarFiltro()
+  toFilter() {
+    this.listSelectedFilter.emit(this.onSelectedFilter);
+    this.onFilterCancel();
   }
 }
