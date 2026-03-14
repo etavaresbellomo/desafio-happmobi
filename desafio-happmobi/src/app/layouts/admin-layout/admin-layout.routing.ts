@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
-import { InicioComponent } from "../../pages/area-logada/inicio/inicio.component";
+import { HomeComponent } from "../../pages/logged/home/home.component";
 
 export const AdminLayoutRoutes: Routes = [
-  {path: 'inicio', component: InicioComponent}
+  {path: 'inicio', component: HomeComponent}
 ]

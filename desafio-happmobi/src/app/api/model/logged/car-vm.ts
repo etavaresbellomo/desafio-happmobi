@@ -1,4 +1,4 @@
-export class CarrosVm {
+export class CarVm {
   name!: string;
   year!: string;
   type!: string;

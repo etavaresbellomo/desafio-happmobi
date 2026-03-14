@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of, throwError } from 'rxjs';
-import { LoginVm } from '../../../../model/conta/login-vm';
+import { LoginVm } from '../../../../model/account/login-vm';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({

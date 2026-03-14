@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CarrosVm } from '../../../../model/area-logada/carros-vm';
+import { CarVm } from '../../../../model/logged/car-vm';
 
 @Injectable({
   providedIn: 'root',
 })
-export class InicioService {
-  constructor() {}
-
-  buscarCarros(): Observable<CarrosVm[]> {
+export class HomeService {
+  getCars(): Observable<CarVm[]> {
     return of([
       {
         name: 'Partner',
@@ -16,7 +14,7 @@ export class InicioService {
         type: 'Utilitário',
         engine: '1.6',
         size: '2',
-        img: 'assets/images/produtos/carros/Imagem 31.png'
+        img: 'assets/images/product/cars/Imagem 31.png'
       },
       {
         name: 'Fiorino',
@@ -24,7 +22,7 @@ export class InicioService {
         type: 'Utilitário leve',
         engine: '1.6',
         size: '2',
-        img: 'assets/images/produtos/carros/Imagem 30.png'
+        img: 'assets/images/product/cars/Imagem 30.png'
       },
       {
         name: 'Doblo',
@@ -32,7 +30,7 @@ export class InicioService {
         type: 'Minivan',
         engine: '1.8',
         size: '7',
-        img: 'assets/images/produtos/carros/Imagem 29.png'
+        img: 'assets/images/product/cars/Imagem 29.png'
       },
       {
         name: 'Toro',
@@ -40,7 +38,7 @@ export class InicioService {
         type: 'Picape média',
         engine: '1.6',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem 25.png'
+        img: 'assets/images/product/cars/Imagem 25.png'
       },
       {
         name: 'Ford Ká',
@@ -48,7 +46,7 @@ export class InicioService {
         type: 'Sedan Compacto',
         engine: '1.0',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem9.png'
+        img: 'assets/images/product/cars/Imagem9.png'
       },
       {
         name: 'Versa',
@@ -56,7 +54,7 @@ export class InicioService {
         type: 'Sedan médio',
         engine: '1.4',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem 27.png'
+        img: 'assets/images/product/cars/Imagem 27.png'
       },
       {
         name: 'Jetta',
@@ -64,7 +62,7 @@ export class InicioService {
         type: 'Sedan grande',
         engine: '2.0',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem 28.png'
+        img: 'assets/images/product/cars/Imagem 28.png'
       },
       {
         name: 'Saveiro',
@@ -72,7 +70,7 @@ export class InicioService {
         type: 'Picape leve-média',
         engine: '1.6',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem 23.png'
+        img: 'assets/images/product/cars/Imagem 23.png'
       },
       {
         name: 'Strada',
@@ -80,7 +78,7 @@ export class InicioService {
         type: 'Picape leve',
         engine: '1.4',
         size: '2',
-        img: 'assets/images/produtos/carros/Imagem 22.png'
+        img: 'assets/images/product/cars/Imagem 22.png'
       },
       {
         name: 'Camaro',
@@ -88,15 +86,15 @@ export class InicioService {
         type: 'Coupé',
         engine: '2.0',
         size: '4',
-        img: 'assets/images/produtos/carros/Imagem 20.png'
+        img: 'assets/images/product/cars/Imagem 20.png'
       },
       {
-        name: 'T-Cross',
+        name: 'T-Css',
         year: '2020',
-        type: 'Crossover',
+        type: 'Cssover',
         engine: '1.6',
         size: '5',
-        img: 'assets/images/produtos/carros/Imagem 18.png'
+        img: 'assets/images/product/cars/Imagem 18.png'
       },
       {
         name: 'Tiggo 8',
@@ -104,7 +102,7 @@ export class InicioService {
         type: 'SUV Grande',
         engine: '2.0',
         size: '7',
-        img: 'assets/images/produtos/carros/Imagem 16.png'
+        img: 'assets/images/product/cars/Imagem 16.png'
       },
     ]);
   }

@@ -5,25 +5,25 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
-import { CarrosVm } from '../../../api/model/area-logada/carros-vm';
-import { FiltroCarroVm } from '../../../api/interface/area-logada/filtro-carro-vm';
+import { CarVm } from '../../../api/model/logged/car-vm';
+import { FilterCarVm } from '../../../api/interface/logged/filter-car-vm';
 
 @Component({
-  selector: 'app-filtro',
+  selector: 'app-filter',
   standalone: true,
   imports: [],
-  templateUrl: './filtro.component.html',
-  styleUrl: './filtro.component.scss',
+  templateUrl: './filter.component.html',
+  styleUrl: './filter.component.scss',
 })
-export class FiltroComponent implements OnChanges {
-  @Input() listCars = new Array<CarrosVm>();
+export class FilterComponent implements OnChanges {
+  @Input() listCars = new Array<CarVm>();
   @Output() filterCancel = new EventEmitter<any>();
   @Output() listSelectedFilter = new EventEmitter<any>();
 
   listTypeOfBodywork = new Array<any>();
   listTypeEngine = new Array<any>();
   listNumberOfSeats = new Array<any>();
-  selectedFilter: FiltroCarroVm = {
+  selectedFilter: FilterCarVm = {
     typeOfBodywork: [],
     typeEngine: [],
     numberOfSeats: [],
@@ -51,7 +51,7 @@ export class FiltroComponent implements OnChanges {
     }
   }
 
-  onSelectedFilter(tipo: keyof FiltroCarroVm, value: number, event: any) {
+  onSelectedFilter(tipo: keyof FilterCarVm, value: number, event: any) {
     const checked = event.target.checked;
 
     if (checked) {

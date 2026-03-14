@@ -4,7 +4,7 @@
       <header class="no-container">
         <div>
           <img
-            src="assets/images/cabecalho/tela-inicio/carros-estacionados.png"
+            src="assets/images/header/home/carros-estacionados.png"
             alt="carros estacionados"
             width="100%"
             class="opacity"
@@ -14,7 +14,7 @@
         <div class="d-flex justify-content-center align-item-center">
           <img
             class="user-img"
-            src="assets/images/cabecalho/tela-inicio/imagem-usuario.png"
+            src="assets/images/header/home/imagem-usuario.png"
             alt="usuário autenticado"
           />
         </div>
@@ -79,9 +79,9 @@
     </div>
   </section>
 } @else {
-  <app-filtro
+  <app-filter
     [listCars]="carList()"
     (filterCancel)="showFilter = false"
     (listSelectedFilter)="showFilteredList($event)"
-  ></app-filtro>
+  ></app-filter>
 }
