@@ -5,14 +5,13 @@ import {
   OnChanges,
   Output,
 } from '@angular/core';
-import { ImportacaoCompartilhada } from '../../../shared/importacao-compartilhada';
 import { CarrosVm } from '../../../api/model/area-logada/carros-vm';
 import { FiltroCarroVm } from '../../../api/interface/area-logada/filtro-carro-vm';
 
 @Component({
   selector: 'app-filtro',
   standalone: true,
-  imports: [ImportacaoCompartilhada],
+  imports: [],
   templateUrl: './filtro.component.html',
   styleUrl: './filtro.component.scss',
 })

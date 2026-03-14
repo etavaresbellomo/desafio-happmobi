@@ -1,14 +1,14 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { ImportacaoCompartilhada } from '../../../shared/importacao-compartilhada';
 import { CarrosVm } from '../../../api/model/area-logada/carros-vm';
 import { InicioService } from '../../../api/module/erp/services/area-logada/inicio.service';
 import { FiltroComponent } from '../filtro/filtro.component';
 import { FiltroCarroVm } from '../../../api/interface/area-logada/filtro-carro-vm';
+import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [ImportacaoCompartilhada, FiltroComponent],
+  imports: [ FiltroComponent, CarouselComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss',
 })

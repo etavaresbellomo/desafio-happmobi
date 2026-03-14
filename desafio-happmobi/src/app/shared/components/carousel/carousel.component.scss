@@ -1,0 +1,8 @@
+@use '../../../../assets/scss/base/variables';
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: variables.$secondary-color;
+  border-radius: 50%;
+  padding: 20px;
+}

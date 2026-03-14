@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { LoginVm } from '../../../api/model/conta/login-vm';
-import { ImportacaoCompartilhada } from '../../../shared/importacao-compartilhada';
+import { Imports } from '../../../shared/import';
 import { AuthService } from '../../../api/module/erp/services/autenticacao/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ImportacaoCompartilhada],
+  imports: [Imports],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
