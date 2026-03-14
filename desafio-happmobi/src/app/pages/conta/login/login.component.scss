@@ -1,3 +1,8 @@
+@use '../../../../assets/scss/base/variables';
+section{
+  background-color: variables.$primary-color;
+}
+
 .header-logo {
   position: relative;
 }

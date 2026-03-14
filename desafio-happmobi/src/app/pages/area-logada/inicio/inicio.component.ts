@@ -13,26 +13,27 @@ import { FiltroCarroVm } from '../../../api/interface/area-logada/filtro-carro-v
   styleUrl: './inicio.component.scss',
 })
 export class InicioComponent {
-  private inicioService = inject(InicioService);
-  listaCarros = signal<CarrosVm[]>([]);
-  mostrarFiltro: boolean = false;
+  private homeService = inject(InicioService);
+
+  carList = signal<CarrosVm[]>([]);
+  showFilter: boolean = false;
 
   constructor() {
     effect(
       () => {
-        this.inicioService.buscarCarros().subscribe((data) => {
-          this.listaCarros.set(data || []);
+        this.homeService.buscarCarros().subscribe((data) => {
+          this.carList.set(data || []);
         });
       },
       { allowSignalWrites: true },
     );
   }
 
-  mostrarComponenteFiltro() {
-    this.mostrarFiltro = true;
+  showFilterComponent() {
+    this.showFilter = true;
   }
 
-  mostrarListaFiltrada(lista:FiltroCarroVm){
-    console.log(lista)
+  showFilteredList(list:FiltroCarroVm){
+    console.log(list)
   }
 }

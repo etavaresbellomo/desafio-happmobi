@@ -1,5 +1,4 @@
 @use '../base/variables';
-@use '../base/functions' as function;
 
 .btn {
   padding: 0.5rem 1rem;
@@ -10,11 +9,11 @@
 
   &.btn-spacing {
     width: 100%;
-    height: 50px;
+    height: 65px;
   }
 
   &.btn-round {
-    border-radius: 25px;
+    border-radius: 50px;
   }
 
   &.btn-square {
@@ -24,11 +23,18 @@
   &.btn-primary {
     background-color: variables.$primary-color;
     color: variables.$light-color;
+    border-color: variables.$primary-color;
   }
 
   &.btn-secundary {
     background-color: variables.$secondary-color;
     color: variables.$light-color;
+    border-color: variables.$secondary-color;
   }
 
+
 }
+  .btn-footer {
+    margin: 6px;
+    padding: 10px;
+  }
