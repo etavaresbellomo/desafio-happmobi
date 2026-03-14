@@ -1,0 +1,19 @@
+@use 'variables';
+
+section {
+  min-height: 100vh;
+  background-color: variables.$primary-color;
+  padding: 0 30px;
+}
+
+a {
+  font-size: variables.$font-size-base;
+  color: variables.$light-color !important;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

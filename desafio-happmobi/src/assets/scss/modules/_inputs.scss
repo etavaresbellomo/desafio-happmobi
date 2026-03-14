@@ -1,0 +1,23 @@
+@use '../base/variables';
+@use '../base/functions' as function;
+
+.input-text {
+  padding: 0.5rem 1rem;
+  font-size: 18px !important;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+
+  &.input-text-round {
+    border-radius: 25px;
+
+    &::placeholder {
+      color: variables.$gray-text-color;
+      padding-left: 20px;
+    }
+  }
+
+  &.input-text-square {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,153 @@
+@use 'variables';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* Reset moderno - baseado em Josh Comeau e Andy Bell */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Define 1rem = 10px para facilitar cálculos */
+  font-size: 10px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+/* Remove estilos padrão de elementos */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: .4s;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Melhora a legibilidade */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+/* Remove animações para quem prefere reduzir */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Foco visível para acessibilidade */
+:focus-visible {
+  outline: 2px solid variables.$primary-color;
+  outline-offset: 2px;
+}
+
+/* Remove estilos de formulários */
+fieldset {
+  border: none;
+}
+
+/* Corrige herança de cores para elementos de formulário */
+input,
+textarea,
+select,
+button {
+  color: inherit;
+}
+
+/* Remove o ícone de calendário do input date no Chrome */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+}
+
+/* Remove o 'X' do input search no Chrome */
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Define cores de seleção de texto */
+::selection {
+  background-color: rgba(0, 123, 255, 0.3);
+  color: inherit;
+}
+
+/* Reset básico para evitar alturas extras */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Remove scroll global */
+}
+
+app-root {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  height: 100vh;
+  overflow: hidden;
+}

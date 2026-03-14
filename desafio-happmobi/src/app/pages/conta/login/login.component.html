@@ -1,5 +1,65 @@
-<input type="text" [(ngModel)]="login.userName" placeholder="usuário">
-<br/>
-<input type="password" [(ngModel)]="login.password" placeholder="senha">
-<br/>
-<button (click)="onLogin()" style="background-color: blanchedalmond; color: white;">Entrar</button>
+<section class="mb-3">
+  <div class="container-fluid layout-page">
+    <header class="header-logo">
+      <div class="d-flex justify-content-end">
+        <img
+          class="opacity header-background"
+          src="../../../../assets/images/logo/logo-grande.png"
+          alt="Logo Guardians Grande"
+        />
+      </div>
+      <div>
+        <div class="d-flex justify-content-center align-item-center">
+          <img
+            class="logo-red"
+            src="../../../../assets/images/logo/logo-vermelhor.png"
+            alt="Logo Guardians Vermelho"
+          />
+        </div>
+        <div class="d-flex justify-content-center align-item-center mt-3">
+          <img
+            src="../../../../assets/images/logo/nome-empresa.png"
+            alt="Nome da Empresa"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="col-sm-12 mt-5 mb-5">
+        <input
+          class="form-control input-text input-text-round mb-3"
+          type="text"
+          [(ngModel)]="login.userName"
+          placeholder="Usuário"
+        />
+        <input
+          class="form-control input-text input-text-round"
+          type="password"
+          [(ngModel)]="login.password"
+          placeholder="Senha"
+        />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div class="mb-3 size-btn-mobile col-sm-12">
+          <button
+            (click)="onLogin()"
+            class="btn btn-secundary btn-round btn-spacing w-100"
+          >
+            Entrar
+          </button>
+          <div class="d-flex justify-content-center mt-2">
+            <a href=""> Esqueci minha senha</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="d-flex justify-content-center mb-5">
+        <span class="text"
+          >Ainda não tem cadastro? <a href="">Criar conta</a></span
+        >
+      </div>
+    </footer>
+  </div>
+</section>

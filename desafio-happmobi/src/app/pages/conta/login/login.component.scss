@@ -1,0 +1,23 @@
+.header-logo {
+  position: relative;
+}
+
+.logo-red {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-background {
+  display: block;
+  max-width: none;
+  margin-right: -45px;
+}
+
+@media (max-width: 570px) {
+  .size-btn-mobile {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}

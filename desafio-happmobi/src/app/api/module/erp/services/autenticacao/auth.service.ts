@@ -13,11 +13,11 @@ export class AuthService {
     private router: Router,
   ) {}
 
-  onLogin(dadosAutenticacao: LoginVm): Observable<any> {
+  onLogin(autenticationData: LoginVm): Observable<any> {
 
 if (
-    dadosAutenticacao.userName === 'admin' &&
-    dadosAutenticacao.password === '123'
+    autenticationData.userName === 'admin' &&
+    autenticationData.password === '123'
   ) {
 
    const fakeToken =
@@ -40,7 +40,7 @@ if (
     return this.router.navigate(['login'])
   }
 
-    public estaAutenticado(): boolean {
+    public authenticated(): boolean {
     const token = localStorage.getItem('access_token')
     if(!token) return false;
 

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   login = new LoginVm();
-  mensagemErro: string = '';
+  errorMessage: string = '';
 
   constructor(
     private authService: AuthService,
@@ -26,12 +26,11 @@ export class LoginComponent {
     } else {
       this.authService.onLogin(this.login).subscribe({
         next: (data: any) => {
-          let dados = data;
           this.router.navigate(['inicio']);
         },
         error: (err: any) => {
-          this.mensagemErro = err;
-          console.error('Erro ao tentar logar no sistema!', this.mensagemErro);
+          this.errorMessage = err;
+          console.error('Erro ao tentar logar no sistema!', this.errorMessage);
         },
       });
     }

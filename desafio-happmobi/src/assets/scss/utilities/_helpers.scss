@@ -1,0 +1,16 @@
+@use '../base/variables';
+
+.opacity {
+  opacity: 12%;
+}
+
+.text {
+  font-size: variables.$font-size-base;
+  color: variables.$light-color;
+}
+
+.layout-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
