@@ -1,0 +1,62 @@
+<section>
+  <div>
+    <!-- header da tela -->
+  </div>
+  <div>
+    <!-- botoes de ação -->
+    <div class="d-flex">
+      <button (click)="onCancelarFiltro()" class="btn btn-primary">Cancelar</button>
+      <button class="btn btn-primary">Filtros</button>
+      <button (click)="limparFiltros()" class="btn btn-primary" >Limpar</button>
+    </div>
+    <!-- Tipo Carroceria -->
+    @for (tipoCarroceria of listaTipoCarroceria; track $index) {
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          (change)="tipoFiltroSelecionado('tipoCarroceria', tipoCarroceria, $event)"
+          [value]="tipoCarroceria"
+          type="checkbox"
+          [id]="'tipoCarroceria' + tipoCarroceria"
+        />
+        <label class="form-check-label mr-1 d-flex align-items-center">
+          {{ tipoCarroceria }}
+        </label>
+      </div>
+    }
+    <!-- Tipo Motor -->
+    @for (tipoMotor of listaTipoMotor; track $index) {
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          (change)="tipoFiltroSelecionado('tipoMotor', tipoMotor, $event)"
+          [value]="tipoMotor"
+          type="checkbox"
+          [id]="'tipoCarroceria' + tipoMotor"
+        />
+        <label class="form-check-label mr-1 d-flex align-items-center">
+          Motor {{ tipoMotor }}
+        </label>
+      </div>
+    }
+    <!-- Quantidade de Lugares -->
+    @for (quantidadeLugares of listaQuantidadeLugares; track $index) {
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          (change)="tipoFiltroSelecionado('quantidadeLugares', quantidadeLugares, $event)"
+          [value]="quantidadeLugares"
+          type="checkbox"
+          [id]="'tipoCarroceria' + quantidadeLugares"
+        />
+        <label class="form-check-label mr-1 d-flex align-items-center">
+          0 {{ quantidadeLugares }}
+        </label>
+      </div>
+    }
+  </div>
+  <div>
+    <!--  btn aplicar filtro -->
+    <button class="btn btn-primary" (click)="filtra()">Filtrar</button>
+  </div>
+</section>
