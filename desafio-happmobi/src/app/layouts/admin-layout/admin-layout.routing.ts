@@ -2,5 +2,5 @@ import { Routes } from "@angular/router";
 import { HomeComponent } from "../../pages/logged/home/home.component";
 
 export const AdminLayoutRoutes: Routes = [
-  {path: 'inicio', component: HomeComponent}
+  {path: 'home', component: HomeComponent}
 ]

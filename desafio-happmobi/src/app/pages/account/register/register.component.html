@@ -1,0 +1,60 @@
+<section class="mb-3">
+  <div class="container-fluid layout-page">
+    <header class="header-logo">
+      <div class="">
+        <div class="d-flex justify-content-center align-item-center">
+          <img
+            class="logo-red"
+            src="../../../../assets/images/logo/logo-vermelhor.png"
+            alt="Logo Guardians Vermelho"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="mb-4">
+        <h2 class="text" style="font-size: 18px;"><b>Informe seus Dados:</b></h2>
+      </div>
+      <form [formGroup]="formRegister" class="form row">
+        <div class="col-sm-12 mt-5 mb-5">
+          <input
+            class="form-control input-text input-text-round mb-3"
+            type="text"
+            formControlName="user"
+            placeholder="Usuário"
+          />
+          <input
+            class="form-control input-text input-text-round mb-3"
+            (change)="onChange()"
+            type="password"
+            formControlName="password"
+            placeholder="Senha"
+          />
+          <input
+            class="form-control input-text input-text-round"
+            (change)="onChange()"
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirme a Senha"
+          />
+        </div>
+      </form>
+      <div class="mb-3 size-btn-mobile col-sm-12">
+        <button
+          (click)="onRegister()"
+          class="btn btn-secundary btn-round btn-spacing w-100"
+        >
+          CADASTRAR
+        </button>
+      </div>
+    </main>
+    <footer>
+      <div class="d-flex justify-content-center mb-5">
+        <span class="text"
+          >Voltar para a tela de Login?
+          <a href="http://localhost:4200/auth/login">Clique Aqui</a></span
+        >
+      </div>
+    </footer>
+  </div>
+</section>

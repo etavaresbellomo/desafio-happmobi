@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginVm } from '../../../api/model/account/login-vm';
-import { Imports } from '../../../shared/import';
-import { AuthService } from '../../../api/module/erp/services/autenticacao/auth.service';
+import { Imports } from '../../../shared/modules/import';
+import { AuthService } from '../../../api/module/erp/services/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,9 +24,9 @@ export class LoginComponent {
     if (!this.login) {
       console.error('Dados de autenticaçao não capturados', this.login);
     } else {
-      this.authService.onLogin(this.login).subscribe({
+      this.authService.login(this.login).subscribe({
         next: (data: any) => {
-          this.router.navigate(['inicio']);
+          this.router.navigate(['home']);
         },
         error: (err: any) => {
           this.errorMessage = err;

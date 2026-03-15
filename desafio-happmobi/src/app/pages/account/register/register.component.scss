@@ -1,0 +1,16 @@
+@use '../../../../assets/scss/base/variables';
+
+section{
+  background-color: variables.$primary-color;
+}
+
+.header-logo {
+  position: relative;
+}
+
+.logo-red {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -24,15 +24,36 @@
     background-color: variables.$primary-color;
     color: variables.$light-color;
     border-color: variables.$primary-color;
+    font-size: 20px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: variables.$primary-color;
+      color: variables.$light-color;
+      border-color: variables.$primary-color;
+      outline: none;
+    }
   }
 
   &.btn-secundary {
     background-color: variables.$secondary-color;
     color: variables.$light-color;
     border-color: variables.$secondary-color;
+    font-size: 20px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: variables.$secondary-color;
+      color: variables.$light-color;
+      border-color: variables.$secondary-color;
+      outline: none;
+    }
   }
 }
-  .btn-footer {
-    margin: 6px;
-    padding: 10px;
-  }
+
+.btn-footer {
+  margin: 6px;
+  padding: 10px;
+}
