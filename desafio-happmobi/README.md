@@ -13,7 +13,7 @@
     <li>npm / yarn</li>
 </ul>
 
-<h2>Técnolias utilizadas:</h2>
+<h2>Técnologias utilizadas:</h2>
 <ul>
     <li>HTML5</li>
     <li>CSS</li>
@@ -36,9 +36,10 @@
     <li>No Terminal da pasta do projeto execulte o comando 'ng serve'</li>
     <li>Abra o Browser</li>
     <li>Navegue para http://localhost:4200/.</li>
+    <li>Abra o modo desenvolvedor (versão mobile)</li>
 </ol>
 <h2>Ultilizando o programa:</h2>
-<p>Na pagina principal do programa temos os campos para logar no sistema e um link para criar uma conta, adicione no campo usuário o valor 'admin'"e no campo senha '123'</p>
+<p>Na pagina principal do programa temos os campos para logar no sistema e um link para criar uma conta, no campo usuário  adicione o valor 'admin' e no campo senha  adicione o valor '123'</p>
 <p>Ao clicar no botão "Entrar", será redirecionado para a página home</p>
 
 <img width="1067" height="1100" alt="Image" src="https://github.com/user-attachments/assets/d671d695-4e66-494a-94e8-e5e88194ea85" />
@@ -55,7 +56,7 @@
 
 <p>Na página de filtro temos o header da tela com uma Lupa e o título de Busca, botões de acão, três accordions de filtro (Tipo de carroceria, tipo de motores e quantidade de lugares) e por fim um botão para aplicar o filtro.</p>
 
-<img width="1076" height="1102" alt="Image" src="https://github.com/user-attachments/assets/e8b23656-67fd-4b89-b061-de3f2cf4fdbb" />
+<img width="980" height="831" alt="Image" src="https://github.com/user-attachments/assets/170fe2ba-fb66-4868-86b6-b2d26bb5b2c0" />
 
 
 <h2>Autor</h2>
